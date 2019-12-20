@@ -6,3 +6,11 @@ class Book {
     this.isbn = isbn;
   }
 }
+
+// UI Class - Handle UI Tasks
+class UI {
+  static displayBooks() {
+    const books = Store.getBooks();
+    books.forEach(book => UI.addBookToList(book));
+  }
+}

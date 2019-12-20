@@ -32,4 +32,22 @@ class UI {
       el.parentElement.parentElement.remove();
     }
   }
+
+  static showAlert(message, className) {
+    const div = document.createElement("div");
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector(".container");
+    const form = document.querySelector("#book-form");
+    container.insertBefore(div, form);
+
+    // vanish in seconds
+    setTimeout(() => document.querySelector(".alert").remove(), 3000);
+  }
+
+  static clearFields() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
+  }
 }
